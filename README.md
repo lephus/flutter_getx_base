@@ -1,16 +1,69 @@
-# flutter_getx_base
+# S SMART MOBILE
 
-A new Flutter project.
+Author: Phu Le
+Email: phule9225@gmail.com
 
-## Getting Started
+## Generate Locates / assets
 
-This project is a starting point for a Flutter application.
+```bash
+get generate locales assets/locales
+dart run build_runner build
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Run build_runner generate DI, model, route
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+$ flutter pub run build_runner build
+$ flutter packages pub run build_runner build --delete-conflicting-outputs
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Setting the splash screen
+
+```bash
+$ flutter pub run flutter_native_splash:create
+```
+
+## Rename app
+
+```bash
+$ flutter pub global run rename setBundleId --targets ios,android --value com.flutter.getx
+$ flutter pub global run rename setAppName --targets ios,android --value  "Flutter GetX"
+```
+
+## Set launcher app icon (assets/icons/launcher/app_icon.png)
+
+```bash
+$ flutter pub get
+$ flutter pub run flutter_launcher_icons
+```
+
+## Image dynamic
+
+https://picsum.photos/200/300
+
+# APP BUILD STEP
+
+1. cd this project folder
+2. flutter clean
+3. delete files: "pubspec.lock", "ios/Pods", "ios/Podfile.lock"
+4. flutter pub get
+5. cd ios
+6. pod install or arch -x86_64 pod install
+7. Build on xcode
+
+## Description:
+
+## ngrok
+
+- ngrok http PORT_NUMBER
+
+Delete pod directory and podfile.lock
+flutter clean
+flutter pub get
+cd ios
+pod install --repo-update
+pod update Firebase/Messaging
+run the application in Xcode
+
+flutter clean && flutter pub get && cd ios && pod install --repo-update && cd ..
+flutter clean && flutter pub get && flutter build appbundle
