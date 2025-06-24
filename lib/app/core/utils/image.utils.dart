@@ -24,9 +24,6 @@ class ImageUtility {
       aspectRatio: CropAspectRatio(ratioX: width ?? 1.0, ratioY: height ?? 1.0),
       compressFormat:
           type == 'png' ? ImageCompressFormat.png : ImageCompressFormat.jpg,
-      aspectRatioPresets: [
-        CropAspectRatioPreset.square,
-      ],
       uiSettings: [
         AndroidUiSettings(
           toolbarColor: Colors.black,
